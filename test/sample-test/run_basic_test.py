@@ -49,6 +49,13 @@ def parse_arguments():
                       type=str,
                       default='kubeflow',
                       help="namespace of the deployed pipeline system. Default: kubeflow")
+  parser.add_argument('--param',
+                      dest="params",
+                      action="append",
+                      nargs=2,
+                      default=[],
+                      metavar=("key", "value"),
+                      help="Extra param to pass to the run (can be given multiple times)")
   args = parser.parse_args()
   return args
 
@@ -77,6 +84,8 @@ def main():
   ###### Create Job ######
   job_name = args.testname +'_sample'
   params = {}
+  for k, v in args.params:
+    params[k] = v
   response = client.run_pipeline(experiment_id, job_name, args.input, params)
   run_id = response.id
   utils.add_junit_test(test_cases, 'create pipeline run', True)
