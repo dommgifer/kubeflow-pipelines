@@ -77,8 +77,10 @@ def main():
 
   ###### Create Experiment ######
   experiment_name = args.testname + ' sample experiment'
+  print('Creating experiment %s...' % experiment_name)
   response = client.create_experiment(experiment_name)
   experiment_id = response.id
+  print('Created experiment %s with ID %s' % (experiment_name, experiment_id))
   utils.add_junit_test(test_cases, 'create experiment', True)
 
   ###### Create Job ######
@@ -86,15 +88,19 @@ def main():
   params = {}
   for k, v in args.params:
     params[k] = v
+  print('Creating pipeline run %s...' % job_name)
   response = client.run_pipeline(experiment_id, job_name, args.input, params)
   run_id = response.id
+  print('Created pipeline run %s with ID %s' % (job_name, run_id))
   utils.add_junit_test(test_cases, 'create pipeline run', True)
 
   ###### Monitor Job ######
   try:
     start_time = datetime.now()
+    print('Waiting run to complete...')
     response = client.wait_for_run_completion(run_id, 1200)
     succ = (response.run.status.lower()=='succeeded')
+    print('Run completed with status %s' % response.run.status)
     end_time = datetime.now()
     elapsed_time = (end_time - start_time).seconds
     utils.add_junit_test(test_cases, 'job completion', succ, 'waiting for job completion failure', elapsed_time)
