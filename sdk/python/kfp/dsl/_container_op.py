@@ -21,7 +21,7 @@ from kubernetes.client import V1Toleration, V1Affinity
 from kubernetes.client.models import (
     V1Container, V1EnvVar, V1EnvFromSource, V1SecurityContext, V1Probe,
     V1ResourceRequirements, V1VolumeDevice, V1VolumeMount, V1ContainerPort,
-    V1Lifecycle, V1Volume
+    V1Lifecycle, V1Volume, V1PodSecurityContext
 )
 
 from . import _pipeline_param
@@ -680,7 +680,8 @@ class BaseOp(object):
     # in the compilation process to generate the DAGs and task io parameters.
     attrs_with_pipelineparams = [
         'node_selector', 'volumes', 'pod_annotations', 'pod_labels',
-        'num_retries', 'init_containers', 'sidecars', 'tolerations'
+        'num_retries', 'init_containers', 'sidecars', 'tolerations',
+        'security_context'
     ]
 
     def __init__(self,
@@ -731,6 +732,7 @@ class BaseOp(object):
         self.timeout = 0
         self.init_containers = init_containers or []
         self.sidecars = sidecars or []
+        self.security_context = None
 
         # used to mark this op with loop arguments
         self.loop_args = None
@@ -901,6 +903,22 @@ class BaseOp(object):
 
     def __repr__(self):
         return str({self.__class__.__name__: self.__dict__})
+
+    def set_pod_security_context(self, pod_security_context):
+        """Set security configuration to be applied on the pod.
+
+        Args:
+          pod_security_context: Kubernetes pod security context
+          For detailed spec, check security context definition
+          https://github.com/kubernetes-client/python/blob/master/kubernetes/client/models/v1_pod_security_context.py
+        """
+
+        if not isinstance(pod_security_context, V1PodSecurityContext):
+            raise ValueError(
+                'invalid argument. Must be of instance `V1PodSecurityContext`.')
+
+        self.security_context = pod_security_context
+        return self
 
 
 from ._pipeline_volume import PipelineVolume  # The import is here to prevent circular reference problems.
