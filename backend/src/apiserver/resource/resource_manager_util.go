@@ -16,8 +16,8 @@ package resource
 
 import (
 	"errors"
-	wfv1 "github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
-	"github.com/argoproj/argo/workflow/common"
+	wfv1 "github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
+	"github.com/arrikto/argoproj-argo/workflow/common"
 	api "github.com/kubeflow/pipelines/backend/api/go_client"
 	"github.com/kubeflow/pipelines/backend/src/common/util"
 	scheduledworkflow "github.com/kubeflow/pipelines/backend/src/crd/pkg/apis/scheduledworkflow/v1beta1"

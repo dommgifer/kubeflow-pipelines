@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"time"
 
-	workflowapi "github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
-	workflowclientset "github.com/argoproj/argo/pkg/client/clientset/versioned"
-	workflowinformers "github.com/argoproj/argo/pkg/client/informers/externalversions"
+	workflowapi "github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
+	workflowclientset "github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned"
+	workflowinformers "github.com/arrikto/argoproj-argo/pkg/client/informers/externalversions"
 	commonutil "github.com/kubeflow/pipelines/backend/src/common/util"
 	"github.com/kubeflow/pipelines/backend/src/crd/controller/scheduledworkflow/client"
 	"github.com/kubeflow/pipelines/backend/src/crd/controller/scheduledworkflow/util"

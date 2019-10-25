@@ -20,7 +20,7 @@ import (
 	"github.com/pkg/errors"
 
 	sq "github.com/Masterminds/squirrel"
-	workflowapi "github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
+	workflowapi "github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
 	"github.com/golang/glog"
 
 	api "github.com/kubeflow/pipelines/backend/api/go_client"

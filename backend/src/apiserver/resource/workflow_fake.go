@@ -19,7 +19,7 @@ import (
 	"github.com/kubeflow/pipelines/backend/src/common/util"
 	"strconv"
 
-	"github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
+	"github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
 	"github.com/golang/glog"
 	"github.com/pkg/errors"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"

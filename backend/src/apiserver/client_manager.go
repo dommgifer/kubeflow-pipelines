@@ -22,7 +22,7 @@ import (
 	"os"
 	"time"
 
-	workflowclient "github.com/argoproj/argo/pkg/client/clientset/versioned/typed/workflow/v1alpha1"
+	workflowclient "github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned/typed/workflow/v1alpha1"
 	"github.com/cenkalti/backoff"
 	"github.com/golang/glog"
 

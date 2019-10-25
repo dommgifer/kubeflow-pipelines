@@ -18,7 +18,7 @@ import (
 	"context"
 	"encoding/json"
 
-	workflow "github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
+	workflow "github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
 	"github.com/golang/protobuf/ptypes/empty"
 	api "github.com/kubeflow/pipelines/backend/api/go_client"
 	"github.com/kubeflow/pipelines/backend/src/apiserver/resource"

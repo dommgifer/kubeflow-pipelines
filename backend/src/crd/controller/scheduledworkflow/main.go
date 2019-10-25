@@ -18,8 +18,8 @@ import (
 	"flag"
 	"time"
 
-	workflowclientSet "github.com/argoproj/argo/pkg/client/clientset/versioned"
-	workflowinformers "github.com/argoproj/argo/pkg/client/informers/externalversions"
+	workflowclientSet "github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned"
+	workflowinformers "github.com/arrikto/argoproj-argo/pkg/client/informers/externalversions"
 	commonutil "github.com/kubeflow/pipelines/backend/src/common/util"
 	swfclientset "github.com/kubeflow/pipelines/backend/src/crd/pkg/client/clientset/versioned"
 	swfinformers "github.com/kubeflow/pipelines/backend/src/crd/pkg/client/informers/externalversions"

@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"strconv"
 
-	workflowapi "github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
-	workflowclient "github.com/argoproj/argo/pkg/client/clientset/versioned/typed/workflow/v1alpha1"
+	workflowapi "github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
+	workflowclient "github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned/typed/workflow/v1alpha1"
 	"github.com/cenkalti/backoff"
 	"github.com/golang/glog"
 	api "github.com/kubeflow/pipelines/backend/api/go_client"

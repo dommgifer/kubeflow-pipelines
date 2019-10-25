@@ -17,9 +17,9 @@ package client
 import (
 	"time"
 
-	workflowapi "github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
-	workflowclientset "github.com/argoproj/argo/pkg/client/clientset/versioned"
-	"github.com/argoproj/argo/pkg/client/informers/externalversions/workflow/v1alpha1"
+	workflowapi "github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
+	workflowclientset "github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned"
+	"github.com/arrikto/argoproj-argo/pkg/client/informers/externalversions/workflow/v1alpha1"
 	commonutil "github.com/kubeflow/pipelines/backend/src/common/util"
 	"github.com/kubeflow/pipelines/backend/src/crd/controller/scheduledworkflow/util"
 	swfapi "github.com/kubeflow/pipelines/backend/src/crd/pkg/apis/scheduledworkflow/v1beta1"

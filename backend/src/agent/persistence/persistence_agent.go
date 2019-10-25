@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"time"
 
-	workflowregister "github.com/argoproj/argo/pkg/apis/workflow"
-	workflowinformers "github.com/argoproj/argo/pkg/client/informers/externalversions"
+	workflowregister "github.com/arrikto/argoproj-argo/pkg/apis/workflow"
+	workflowinformers "github.com/arrikto/argoproj-argo/pkg/client/informers/externalversions"
 	"github.com/kubeflow/pipelines/backend/src/agent/persistence/client"
 	"github.com/kubeflow/pipelines/backend/src/agent/persistence/worker"
 	"github.com/kubeflow/pipelines/backend/src/common/util"

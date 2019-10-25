@@ -17,8 +17,8 @@ package client
 import (
 	"time"
 
-	argoclient "github.com/argoproj/argo/pkg/client/clientset/versioned"
-	"github.com/argoproj/argo/pkg/client/clientset/versioned/typed/workflow/v1alpha1"
+	argoclient "github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned"
+	"github.com/arrikto/argoproj-argo/pkg/client/clientset/versioned/typed/workflow/v1alpha1"
 	"github.com/cenkalti/backoff"
 	"github.com/golang/glog"
 	"github.com/pkg/errors"

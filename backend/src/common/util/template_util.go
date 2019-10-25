@@ -17,7 +17,7 @@ package util
 import (
 	"encoding/json"
 
-	"github.com/argoproj/argo/pkg/apis/workflow/v1alpha1"
+	"github.com/arrikto/argoproj-argo/pkg/apis/workflow/v1alpha1"
 	"github.com/ghodss/yaml"
 )
 
